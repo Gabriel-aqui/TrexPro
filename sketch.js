@@ -49,7 +49,6 @@ function setup() {
   ground.addImage("chao", groundImage);
   falseGround = createSprite(width/2, height -19, width, 1);
   falseGround.visible = false;
-  trex.debug = false
   trex.setCollider ("circle", 0, -0, 40)
  //trex.setCollider("rectangle", 60, 0, 100, 200, 90)
 }
@@ -64,7 +63,7 @@ function draw() {
   if(jogoEst === "play") {
     //score = score + Math.round(frameCount/120)
     score = score + Math.round(getFrameRate()/60);
-      if (touches.length>0||keyDown("space") && trex.y > height - 60) {
+      if (touches.length>0||keyDown("space") && trex.y > height - 40) {
     trex.velocityY = -10;
     jumpSound.play()
     touches = []
@@ -120,7 +119,7 @@ function cloudSet() {
     cloud.scale = Math.round(random(0.5, 0.7));
     cloud.depth = trex.depth;
     trex.depth = trex.depth + 1;
-    cloud.lifetime = 1000;
+    cloud.lifetime = 700;
     cloudGroup.add(cloud)
   }
 }
@@ -130,7 +129,7 @@ function cactus() {
     cactuSprite = createSprite(width, height - 40, 30, 30);
     cactuSprite.scale = 0.7;
     cactuSprite.velocityX = -(8+score/100);
-    cactuSprite.lifetime = 1000;
+    cactuSprite.lifetime = 700;
     cactusGroup.add(cactuSprite)
     randomic = Math.round(random(1, 6));
     switch (randomic) {
