@@ -28,7 +28,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(windowWidth, 200);
   //criando o trex
   restartSprite = createSprite(width/2, height/2)
   restartSprite.addImage("restart.png", restart)
